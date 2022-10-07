@@ -7,12 +7,12 @@ function App() {
   return (
     <div className="App">
       <div style={{ display: 'grid', gridTemplateColumns: '1fr 4fr' }}>
-        <div>
+        <div className="border">
           <Navbar />
         </div>
         <div>
           <Routes>
-            <Route exact path="/models" element={<Categories />} />
+            <Route exact path="/brands" element={<Categories />} />
           </Routes>
         </div>
       </div>
