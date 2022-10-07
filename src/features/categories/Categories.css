@@ -13,3 +13,24 @@
   padding: 20px 0;
   font-size: 30px;
 }
+
+.soc-img {
+  width: 30px;
+  margin-left: 10px;
+}
+
+.div-height {
+  height: 200px;
+}
+
+.model-details {
+  margin-top: 30px;
+}
+
+.border-top1 {
+  border-top-style: solid;
+  border-top-style: dotted;
+  border-color: rgb(204, 204, 204);
+  width: 50%;
+  margin-left: 90px;
+}

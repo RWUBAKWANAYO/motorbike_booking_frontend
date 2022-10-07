@@ -6,7 +6,6 @@ import {
   // CDBSidebarFooter,
   CDBSidebarHeader,
   CDBSidebarMenu,
-  CDBSidebarMenuItem,
 } from 'cdbreact';
 
 // const Navbar = () => (
@@ -38,28 +37,30 @@ import {
 // export default Navbar;
 // import React from 'react';
 const Navbar = () => (
-  <div style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
-    <CDBSidebar textColor="#fff" backgroundColor="#333">
+  <div className="border" style={{ display: 'flex', height: '100vh', overflow: 'scroll initial' }}>
+    <CDBSidebar textColor="#000" backgroundColor="#fff">
       <CDBSidebarHeader prefix={<i className="fa fa-bars fa-large" />}>
         <a href="/" className="text-decoration-none" style={{ color: 'inherit' }}>
-          Vespa
+          <img className="logo" src="https://logoeps.com/wp-content/uploads/2013/06/vespa-motorcycle-vector-logo.png" alt="Vespa logo" />
         </a>
       </CDBSidebarHeader>
 
       <CDBSidebarContent className="sidebar-content">
         <CDBSidebarMenu>
-          <NavLink exact to="/Models" activeClassName="activeClicked">
-            <CDBSidebarMenuItem icon="columns">Models</CDBSidebarMenuItem>
-          </NavLink>
-          <NavLink exact to="/Lifestyle" activeClassName="activeClicked">
-            <CDBSidebarMenuItem icon="table">Lifestyle</CDBSidebarMenuItem>
-          </NavLink>
-          <NavLink exact to="/Shop" activeClassName="activeClicked">
-            <CDBSidebarMenuItem icon="user">Shop</CDBSidebarMenuItem>
-          </NavLink>
-          <NavLink exact to="/Testdrive" activeClassName="activeClicked">
-            <CDBSidebarMenuItem icon="chart-line">Test drive</CDBSidebarMenuItem>
-          </NavLink>
+          <div className="nav-link-div">
+            <NavLink exact to="/Models" className={({ isActive }) => (isActive ? 'activeClicked text-white font-weight-bold' : 'font-weight-bold')}>
+              MODELS
+            </NavLink>
+            <NavLink exact to="/Lifestyle" className={({ isActive }) => (isActive ? 'activeClicked text-white font-weight-bold' : 'font-weight-bold')}>
+              LIFESTYLE
+            </NavLink>
+            <NavLink exact to="/Shop" className={({ isActive }) => (isActive ? 'activeClicked text-white font-weight-bold' : 'font-weight-bold')}>
+              SHOP
+            </NavLink>
+            <NavLink exact to="/Testdrive" className={({ isActive }) => (isActive ? 'activeClicked text-white font-weight-bold' : 'font-weight-bold')}>
+              TEST DRIVE
+            </NavLink>
+          </div>
         </CDBSidebarMenu>
       </CDBSidebarContent>
       {/*
