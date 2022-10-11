@@ -1,7 +1,6 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
-import motor1 from '../../../assets/images/motor1.png';
 import Sidebar from '../../../common/sidebar/Sidebar';
 import './Reserve.css';
 
