@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faTwitter, faLinkedinIn, faGithub, faDiscord, faGooglePlusG,
+  faTwitter, faLinkedinIn, faGooglePlusG,
 } from '@fortawesome/free-brands-svg-icons';
 
 const MotorCardMedia = () => {
