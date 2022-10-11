@@ -15,15 +15,12 @@ const MotorDetails = () => {
     <div className="motordetails-cont">
       <Sidebar />
       <div className="motordetails-wrapper">
-        <div className="motordetails-image">
-          <img src={motor1} alt="motor" />
-        </div>
+        <div className="motordetails-image"><img src={motor1} alt="motor" /></div>
         <div className="motordetails-desc">
           <h1>VESP C-20</h1>
           <h4>
-            Most bikes are somewhat stylish, a lot of a motorcycle's styling is
-            there out of necessity - still, these bikes are downright gorgeous
-            to look at.
+            This motorcycle is very interesting and has a lot of features that riders love.
+
           </h4>
           <div className="motor-info-list">
             <span>
@@ -43,21 +40,11 @@ const MotorDetails = () => {
               <small>24 Hours</small>
             </span>
           </div>
-          <div className="motor-colors">
-            <img src={motorcolors} alt="available colors" />
-          </div>
-          <button
-            type="button"
-            className="details-book-btn"
-            onClick={() => HandleNavigation(2)}
-          >
-            <i className="reserve-motor-icon">
-              <FontAwesomeIcon icon={faCashRegister} />
-            </i>
+          <div className="motor-colors"><img src={motorcolors} alt="available colors" /></div>
+          <button type="button" className="details-book-btn" onClick={() => HandleNavigation(2)}>
+            <i className="reserve-motor-icon"><FontAwesomeIcon icon={faCashRegister} /></i>
             <b>Reserve</b>
-            <i className="details-chevron-right">
-              <FontAwesomeIcon icon={faChevronRight} />
-            </i>
+            <i className="details-chevron-right"><FontAwesomeIcon icon={faChevronRight} /></i>
           </button>
         </div>
       </div>
