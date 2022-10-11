@@ -2,6 +2,7 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Navbar from '../common/Navbar';
 import Categories from '../features/categories/Categories';
+import Advertisements from '../features/advertisements/Advertisements';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <div>
           <Routes>
             <Route exact path="/brands" element={<Categories />} />
+            <Route exact path="/lifestyle" element={<Advertisements />} />
           </Routes>
         </div>
       </div>
