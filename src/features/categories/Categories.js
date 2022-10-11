@@ -9,7 +9,7 @@ const Categories = () => (
     </div>
     <div className="container">
       <ul className="grid-container list-unstyled">
-        <li className="item1">
+        <li>
           <div className="model-img div-height">
             <img className="brand-img" src="https://ridermagazine.com/wp-content/uploads/2022/10/vespa-gts-super-300-in-Rosso-Coraggioso.jpg" alt="Vespa motorbike" />
           </div>
@@ -46,7 +46,7 @@ const Categories = () => (
             </div>
           </div>
         </li>
-        <li className="item2">
+        <li>
           <div className="model-img div-height">
             <img className="brand-img" src="https://kservico.com.ph/wp-content/uploads/2017/10/nmax-icon-gray-std-600x600.png" alt="Yamaha motorbike" />
           </div>
@@ -83,7 +83,7 @@ const Categories = () => (
             </div>
           </div>
         </li>
-        <li className="item3">
+        <li>
           <div className="model-img div-height">
             <img className="brand-img" src="https://cdp.azureedge.net/products/USA/SU/2020/SCOOTER/SCOOTER/BURGMAN_200/50/WHITE/2000000001.jpg" alt="suzuki motorbike" />
           </div>
@@ -120,7 +120,7 @@ const Categories = () => (
             </div>
           </div>
         </li>
-        <li className="item1">
+        <li>
           <div className="model-img div-height">
             <img className="brand-img" src="https://ridermagazine.com/wp-content/uploads/2022/10/vespa-gts-super-300-in-Rosso-Coraggioso.jpg" alt="Vespa motorbike" />
           </div>
@@ -157,7 +157,7 @@ const Categories = () => (
             </div>
           </div>
         </li>
-        <li className="item2">
+        <li>
           <div className="model-img div-height">
             <img className="brand-img" src="https://kservico.com.ph/wp-content/uploads/2017/10/nmax-icon-gray-std-600x600.png" alt="Yamaha motorbike" />
           </div>
@@ -194,7 +194,7 @@ const Categories = () => (
             </div>
           </div>
         </li>
-        <li className="item3">
+        <li>
           <div className="model-img div-height">
             <img className="brand-img" src="https://cdp.azureedge.net/products/USA/SU/2020/SCOOTER/SCOOTER/BURGMAN_200/50/WHITE/2000000001.jpg" alt="suzuki motorbike" />
           </div>
@@ -231,7 +231,7 @@ const Categories = () => (
             </div>
           </div>
         </li>
-        <li className="item2">
+        <li>
           <div className="model-img div-height">
             <img className="brand-img" src="https://kservico.com.ph/wp-content/uploads/2017/10/nmax-icon-gray-std-600x600.png" alt="Yamaha motorbike" />
           </div>
@@ -268,7 +268,7 @@ const Categories = () => (
             </div>
           </div>
         </li>
-        <li className="item3">
+        <li>
           <div className="model-img div-height">
             <img className="brand-img" src="https://cdp.azureedge.net/products/USA/SU/2020/SCOOTER/SCOOTER/BURGMAN_200/50/WHITE/2000000001.jpg" alt="suzuki motorbike" />
           </div>

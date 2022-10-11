@@ -23,7 +23,7 @@ const Navbar = () => (
             <NavLink exact to="/brands" className={({ isActive }) => (isActive ? 'activeClicked text-white font-weight-bold' : 'font-weight-bold')}>
               Brand
             </NavLink>
-            <NavLink exact to="/Lifestyle" className={({ isActive }) => (isActive ? 'activeClicked text-white font-weight-bold' : 'font-weight-bold')}>
+            <NavLink exact to="/lifestyle" className={({ isActive }) => (isActive ? 'activeClicked text-white font-weight-bold' : 'font-weight-bold')}>
               LIFESTYLE
             </NavLink>
             <NavLink exact to="/Shop" className={({ isActive }) => (isActive ? 'activeClicked text-white font-weight-bold' : 'font-weight-bold')}>
