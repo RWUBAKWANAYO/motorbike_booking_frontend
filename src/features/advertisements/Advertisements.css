@@ -1,0 +1,36 @@
+.advertcontainer {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  width: 70%;
+  margin-left: 14%;
+  margin-top: 5.5%;
+  height: 80%;
+}
+
+.advertcontainer > div {
+  text-align: center;
+  padding: 0 0;
+  font-size: 30px;
+  width: 100%;
+  background-color: aquamarine;
+}
+
+.brandimg {
+  width: 100%;
+  height: 100%;
+}
+
+/*
+.item4, .item5, .item6{
+  position: absolute;
+  top: 56%;
+}
+.item4{
+  right: 67%;
+}
+.item5{
+  right: 30%;
+}
+.item6{
+  right: 78%;
+} */
