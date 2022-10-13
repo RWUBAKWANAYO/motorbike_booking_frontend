@@ -1,6 +1,6 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import axios from "axios";
-import { toast } from "react-toastify";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 
 const initialState = {
   loading: false,
@@ -9,34 +9,35 @@ const initialState = {
 };
 
 export const ReserveMotor = createAsyncThunk('reservemotor', async (motorid, { rejectWithValue }) => {
-    const id = toast.loading('Reserving...');
-    try {
-        const response = await axios.post(`http://localhost:5000/api/reserve/${motorid}`);
-        toast.dismiss(id);
-        toast.success('Motor Reserved Successfully');
-        return response.data;
-        } catch (error) {
-            toast.dismiss(id);
-            toast.error('Error Reserving Motor');
-            return rejectWithValue(error.response.data);
-        }
+  const id = toast.loading('Reserving...');
+  try {
+    const response = await axios.post(`http://localhost:3000/api/v1/reserve/${motorid}`);
+    toast.update(id, {
+      render: 'Motor Reserved!', type: toast.TYPE.SUCCESS, isLoading: false, autoClose: 2000,
+    });
+    return response.data;
+  } catch (error) {
+    toast.update(id, {
+      render: 'Failed to reserve motor', type: toast.TYPE.ERROR, isLoading: false, autoClose: 2000,
+    });
+    return rejectWithValue(error);
+  }
 });
 
-export const reserveSlice = createSlice({
-    name: "reservemotor",
-    initialState,
-    reducers: {},
-    extraReducers: {
-        [ReserveMotor.pending]: (state) => {
-            state.loading = true;
-        },
-        [ReserveMotor.fulfilled]: (state, { payload }) => {
-            state.loading = false;
-            state.motor = payload;
-        },
-        [ReserveMotor.rejected]: (state, { payload }) => {
-            state.loading = false;
-            state.errors = payload;
-        },
-    },
+const reserveSlice = createSlice({
+  name: 'reservemotor',
+  initialState,
+  extraReducers: (builder) => {
+    builder.addCase(ReserveMotor.pending, (state) => {
+      state.loading = true; state.motor = []; state.errors = [];
+    });
+    builder.addCase(ReserveMotor.fulfilled, (state, { payload }) => {
+      state.loading = false; state.motor = payload; state.errors = [];
+    });
+    builder.addCase(ReserveMotor.rejected, (state, { payload }) => {
+      state.loading = false; state.motor = []; state.errors = payload;
+    });
+  },
 });
+
+export default reserveSlice.reducer;

@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import Cities from './Cities';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { FetchMotors } from '../../../motors/motorsSlice';
+import {useNavigate} from 'react-router-dom';
 
 const ReserveForm = () => {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const motorslist = useSelector((state) => state.motorslist);
   const [reserveData, setReserveData] = useState({ city: null, date: '' });
   return (
     <form className="reserve-form" required>

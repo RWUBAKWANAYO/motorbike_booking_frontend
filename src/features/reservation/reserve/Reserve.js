@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import motor1 from '../../../assets/images/motor1.png';
@@ -6,8 +7,12 @@ import Sidebar from '../../../common/sidebar/Sidebar';
 import SidebarPop from '../../../common/sidebar/SidebarPop';
 import './Reserve.css';
 import ReserveForm from './ReserveForm';
+import { FetchMotors } from '../../../motors/motorsSlice';
 
 const Reserve = () => {
+  const dispatch = useDispatch();
+  const [motorbikes, setMotorbikes] = useState([]);
+  const motorslist = useSelector((state) => state.motorslist);
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
