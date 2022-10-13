@@ -1,12 +1,12 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './MotorCard.css';
-import motor1 from '../../assets/images/motor1.png';
 import MotorCardMedia from './MotorCardMedia';
 
-const MotorCard = () => (
+const MotorCard = ({ motor }) => (
   <div className="motor-card-cont">
-    <img src={motor1} alt="motocycle" />
-    <small className="motor-card-name">VSP C-20 </small>
+    <img src={motor.image} alt="motocycle" />
+    <small className="motor-card-name">{motor.motor_name}</small>
     <small className="motor-card-break">..................</small>
     <p className="motor-desc">
       An electric motor is a new electrical machine designed world
@@ -15,4 +15,10 @@ const MotorCard = () => (
   </div>
 );
 
+MotorCard.propTypes = {
+  motor: PropTypes.shape({
+    image: PropTypes.string.isRequired,
+    motor_name: PropTypes.string.isRequired,
+  }),
+};
 export default MotorCard;
