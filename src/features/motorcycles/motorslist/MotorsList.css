@@ -70,3 +70,26 @@
 .motor-card:hover {
   border: 1px rgba(0, 0, 0, 0.2) solid;
 }
+
+@media only screen and (max-width: 768px) {
+  .motorslist-wrapper {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .motor-cards-list {
+    padding: 0 7.5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 7.5%;
+    row-gap: 2rem;
+  }
+
+  .motorslist-cont {
+    flex-direction: column;
+  }
+}

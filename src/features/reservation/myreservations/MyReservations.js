@@ -1,11 +1,13 @@
 import React from 'react';
 import '../../../common/ListAll.css';
 import Sidebar from '../../../common/sidebar/Sidebar';
+import SidebarPop from '../../../common/sidebar/SidebarPop';
 import motor1 from '../../../assets/images/motor1.png';
 
 const MyReservations = () => (
   <div className="list-all-cont">
     <Sidebar />
+    <SidebarPop />
     <div className="list-all-wrapper">
       <h1 className="list-all-header">MY RESERVATIONS</h1>
       <table className="list-all-table">

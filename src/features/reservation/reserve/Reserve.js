@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import motor1 from '../../../assets/images/motor1.png';
 import Sidebar from '../../../common/sidebar/Sidebar';
+import SidebarPop from '../../../common/sidebar/SidebarPop';
 import './Reserve.css';
 import ReserveForm from './ReserveForm';
 
@@ -11,6 +12,7 @@ const Reserve = () => {
 
   return (
     <div className="reserve-cont">
+      <SidebarPop />
       {showSidebar && (
       <div className="reserve-sidebar">
         <Sidebar />

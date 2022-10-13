@@ -76,3 +76,26 @@
   background-color: #a50000;
   color: #fff;
 }
+
+@media only screen and (max-width: 768px) {
+  .list-all-cont {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .list-all-wrapper {
+    width: 100%;
+    height: auto;
+    margin: 3rem 12px 0 0;
+    padding-bottom: 3rem;
+  }
+
+  .list-all-table th {
+    background-color: rgba(34, 38, 42, 0.5);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 2px;
+    text-align: center;
+  }
+}

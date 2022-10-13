@@ -116,3 +116,19 @@
 .motor-info-list span:nth-child(odd) {
   background-color: var(--list-light-color);
 }
+
+@media only screen and (max-width: 768px) {
+  .motordetails-wrapper {
+    width: 100%;
+    margin: 68px 7px 0 0;
+    display: grid;
+    grid-template-columns: 8fr 8fr;
+  }
+
+  .motordetails-cont {
+    flex-direction: column;
+  }
+  .motordetails-image {
+    height: 80%;
+  }
+}

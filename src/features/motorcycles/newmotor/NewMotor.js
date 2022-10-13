@@ -6,12 +6,14 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import Sidebar from '../../../common/sidebar/Sidebar';
+import SidebarPop from '../../../common/sidebar/SidebarPop';
 
 const NewMotor = () => {
   const [choosenimg, setChoosenimg] = useState('Upload motorcylce Image');
   return (
     <div className="add-motor-cont">
       <Sidebar />
+      <SidebarPop />
       <div className="add-motor-wrapper">
 
         <form className="add-motor-form">

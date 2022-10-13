@@ -3,6 +3,7 @@ import './MotorsList.css';
 import { useNavigate } from 'react-router-dom';
 import MotorCard from '../../../common/motorcard/MotorCard';
 import Sidebar from '../../../common/sidebar/Sidebar';
+import SidebarPop from '../../../common/sidebar/SidebarPop';
 import MotorsListHeader from './MotorsListHeader';
 
 const Motorcycles = () => {
@@ -12,6 +13,7 @@ const Motorcycles = () => {
   return (
     <div className="motorslist-cont">
       <Sidebar />
+      <SidebarPop />
       <div className="motorslist-wrapper">
         <MotorsListHeader />
         <div className="motor-cards-list">
