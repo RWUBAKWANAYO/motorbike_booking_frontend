@@ -1,5 +1,6 @@
 import React from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
 import Home from '../features/home/Home';
 import Motorcycles from '../features/motorcycles/motorslist/MotorsList';
 import MotorDetails from '../features/motorcycles/motordetails/MotorDetails';
@@ -21,6 +22,7 @@ function App() {
         <Route exact path="/my_reservations" element={<MyReservations />} />
         <Route exact path="/reserve/:motor_id" element={<Reserve />} />
       </Routes>
+      <ToastContainer autoClose={2000} />
     </div>
   );
 }
