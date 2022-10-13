@@ -1,9 +1,9 @@
-/* eslint-disable no-nested-ternary */
 import React from 'react';
+import PropTypes from 'prop-types';
 import { useLocation, Navigate, Outlet } from 'react-router-dom';
 import UseAuth from './UseAuth';
 
-const RequireAuth = ({ allowedRole }) => {
+function RequireAuth({ allowedRole }) {
   const location = useLocation();
   const { User } = UseAuth();
   if (!User) {
@@ -14,6 +14,10 @@ const RequireAuth = ({ allowedRole }) => {
     if (User.role === allowedRole || User.role === 'admin') return <Outlet />;
     return <Navigate to="/unauthorized" state={{ from: location }} replace />;
   }
+}
+
+RequireAuth.propTypes = {
+  allowedRole: PropTypes.string.isRequired,
 };
 
 export default RequireAuth;
