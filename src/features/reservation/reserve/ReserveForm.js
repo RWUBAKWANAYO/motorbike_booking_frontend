@@ -2,11 +2,20 @@ import React, { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
 import Cities from './Cities';
+import { useDispatch } from 'react-redux';
+import { ReserveMotor } from './reserveSlice';
+import UseAuth from '../../../common/UseAuth';
 
 const ReserveForm = () => {
+  const dispatch = useDispatch();
   const [reserveData, setReserveData] = useState({ city: null, date: '' });
+  const HandleReserve = (e) => {
+    e.preventDefault();
+    const { User } = UseAuth();
+    dispatch(ReserveMotor(reserveData));
+  }
   return (
-    <form className="reserve-form" required>
+    <form className="reserve-form" required onSubmit={ (e) => HandleReserve(e) }>
       <div className="reserve-item">
         <div className="reserve-display">
           <small>{reserveData.city ? reserveData.city : 'Select city'}</small>
