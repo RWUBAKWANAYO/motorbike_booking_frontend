@@ -91,6 +91,10 @@
   color: var(--green-color);
 }
 
+.sidebarmenu-cont {
+  display: none;
+}
+
 .sidebarmenu-cont button {
   padding: 5px;
   cursor: pointer;
