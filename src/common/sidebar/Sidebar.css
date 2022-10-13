@@ -90,6 +90,7 @@
 .sidebar-routes-links a:hover {
   color: var(--green-color);
 }
+
 .sidebarmenu-cont button {
   padding: 5px;
   cursor: pointer;
