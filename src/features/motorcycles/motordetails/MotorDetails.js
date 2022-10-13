@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight, faCashRegister } from '@fortawesome/free-solid-svg-icons';
 import Sidebar from '../../../common/sidebar/Sidebar';
+import SidebarPop from '../../../common/sidebar/SidebarPop';
 import motor1 from '../../../assets/images/motor1.png';
 import motorcolors from '../../../assets/images/motorcolors.png';
 
@@ -14,6 +15,7 @@ const MotorDetails = () => {
   return (
     <div className="motordetails-cont">
       <Sidebar />
+      <SidebarPop />
       <div className="motordetails-wrapper">
         <div className="motordetails-image"><img src={motor1} alt="motor" /></div>
         <div className="motordetails-desc">

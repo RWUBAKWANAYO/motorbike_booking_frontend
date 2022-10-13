@@ -90,3 +90,72 @@
 .sidebar-routes-links a:hover {
   color: var(--green-color);
 }
+
+.sidebarmenu-cont {
+  display: none;
+}
+
+.sidebarmenu-cont button {
+  padding: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  visibility: hidden;
+  opacity: 0;
+  font-size: 1.8rem;
+  margin-right: 16px;
+}
+
+@media only screen and (max-width: 768px) {
+  .sidebar-cont {
+    display: none !important;
+  }
+
+  .logo-sidebar {
+    margin: 0 0 0 25px;
+  }
+
+  .sidebarmenu-cont {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 85px;
+    position: sticky;
+    top: 0;
+    z-index: 16;
+    background-color: white;
+  }
+
+  .sidebarmenu-cont button {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .sidebarmenu-cont .close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 1rem;
+  }
+
+  .sidebarmenu-cont nav {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    transition: 1s;
+    transform: translateY(-230vh);
+    z-index: 20;
+    background-color: white;
+  }
+
+  .sidebarmenu-cont .responsive_nav {
+    transform: none;
+  }
+}
