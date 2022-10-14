@@ -1,8 +1,24 @@
 import React from 'react';
-import { NavLink, useLocation } from 'react-router-dom';
+import {
+  NavLink, useLocation, useNavigate, useParams,
+} from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const SidebarLinks = () => {
   const location = useLocation();
+  const navigate = useNavigate();
+  const { motorId } = useParams();
+
+  const handleReserve = () => {
+    if (location.pathname.includes('/reserve/')) return;
+    if (location.pathname.includes('/details')) {
+      toast.dismiss();
+      setTimeout(() => navigate(`/reserve/${motorId}`));
+    } else {
+      toast.error('Select motor you want to book');
+      setTimeout(() => navigate('/motorcycles'), 2000);
+    }
+  };
 
   const links = [
     { id: 1, path: '/motorcycles', text: 'MOTORCYCLES' },
@@ -13,11 +29,13 @@ const SidebarLinks = () => {
   ];
   return (
     <div className="sidebar-routes-links">
+
       {links.map((el) => (
         <NavLink
-          to={el.path}
+          to={el.path !== '/reserve' && el.path}
           key={el.id}
           id={location.pathname.includes(el.path) ? 'link_active' : ''}
+          onClick={() => (el.path === '/reserve' && handleReserve())}
         >
           {el.text}
         </NavLink>

@@ -16,7 +16,7 @@ const Motorcycles = () => {
   const HandleDetails = (id) => navigate(`/motorcycles/${id}/details`);
 
   useEffect(() => {
-    dispatch(FetchMotors());
+    if (motorslist.motors.length <= 0)dispatch(FetchMotors());
   }, []);
 
   return (

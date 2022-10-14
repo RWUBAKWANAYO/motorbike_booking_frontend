@@ -6,6 +6,8 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
+import { toast } from 'react-toastify';
 import Sidebar from '../../../common/sidebar/Sidebar';
 import SidebarPop from '../../../common/sidebar/SidebarPop';
 import { CreateMotors } from './newmotorSlice';
@@ -13,18 +15,27 @@ import { CreateMotors } from './newmotorSlice';
 const NewMotor = () => {
   const dispatch = useDispatch();
 
-  const [choosenimg, setChoosenimg] = useState('Upload motorcylce Image');
   const [motorData, setMotorData] = useState({
     motor_name: '',
     year: '',
     category_id: 2,
-    image: 'https://i.pinimg.com/474x/00/72/55/0072551c8158edff2d18537bdae73886.jpg',
     price: '',
+    image: { text: 'Upload motorcylce Image', photo: '' },
   });
 
   const handleCreate = (e) => {
     e.preventDefault();
-    dispatch(CreateMotors(motorData));
+    toast.loading('Upload image...');
+    const formData = new FormData();
+    formData.append('file', motorData.image.photo);
+    formData.append('upload_preset', 'finalcapstone');
+    formData.append('cloud_name', 'nayo');
+    axios.post('https://api.cloudinary.com/v1_1/nayo/image/upload', formData)
+      .then((res) => {
+        toast.dismiss();
+        const data = { ...motorData, image: res.data.url };
+        return dispatch(CreateMotors(data));
+      }).catch((err) => toast.error(err));
   };
 
   return (
@@ -69,16 +80,22 @@ const NewMotor = () => {
           <div className="add-motor-input-cont">
             <div className="upload-cont">
               <FontAwesomeIcon icon={faImage} className="add-motor-icon" />
-              {choosenimg}
+              {motorData.image.text}
             </div>
             <input
               type="file"
               placeholder="Full name"
               required
               className="upload-image-input"
-              style={{ color: choosenimg === 'Upload motorcylce Image' ? '' : '#000' }}
+              style={{ color: motorData.image.text === 'Upload motorcylce Image' ? '' : '#000' }}
               onChange={(e) => {
-                setChoosenimg(e.target.files[0].name);
+                setMotorData({
+                  ...motorData,
+                  image: {
+                    text: e.target.files[0].name,
+                    photo: e.target.files[0],
+                  },
+                });
               }}
             />
           </div>
