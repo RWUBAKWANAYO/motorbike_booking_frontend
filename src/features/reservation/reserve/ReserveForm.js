@@ -1,12 +1,24 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCalendar } from '@fortawesome/free-solid-svg-icons';
+import { useDispatch } from 'react-redux';
 import Cities from './Cities';
+import { CreateReservation } from './reserveSlice';
+import UseAuth from '../../../common/UseAuth';
 
-const ReserveForm = () => {
+const ReserveForm = ({ motorId }) => {
   const [reserveData, setReserveData] = useState({ city: null, date: '' });
+  const dispatch = useDispatch();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    const { User } = UseAuth();
+    const data = { ...reserveData, motorbike_id: motorId, user_id: User.id };
+    dispatch(CreateReservation(data));
+  };
   return (
-    <form className="reserve-form" required>
+    <form className="reserve-form" required onSubmit={(e) => handleSubmit(e)}>
       <div className="reserve-item">
         <div className="reserve-display">
           <small>{reserveData.city ? reserveData.city : 'Select city'}</small>
@@ -42,4 +54,7 @@ const ReserveForm = () => {
   );
 };
 
+ReserveForm.propTypes = {
+  motorId: PropTypes.number.isRequired,
+};
 export default ReserveForm;

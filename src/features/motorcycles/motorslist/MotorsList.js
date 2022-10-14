@@ -8,6 +8,7 @@ import Sidebar from '../../../common/sidebar/Sidebar';
 import SidebarPop from '../../../common/sidebar/SidebarPop';
 import MotorsListHeader from './MotorsListHeader';
 import { FetchMotors } from './motorslistSlice';
+import { CardSkeleton } from '../../../common/skeleton/Skeleton';
 
 const Motorcycles = () => {
   const navigate = useNavigate();
@@ -16,7 +17,7 @@ const Motorcycles = () => {
   const HandleDetails = (id) => navigate(`/motorcycles/${id}/details`);
 
   useEffect(() => {
-    if (motorslist.motors.length <= 0)dispatch(FetchMotors());
+    dispatch(FetchMotors());
   }, []);
 
   return (
@@ -26,7 +27,7 @@ const Motorcycles = () => {
       <div className="motorslist-wrapper">
         <MotorsListHeader />
         <div className="motor-cards-list">
-          {motorslist.loading && <p>loading....</p>}
+          {motorslist.loading && <CardSkeleton />}
           {motorslist.motors.length > 0 && motorslist.motors.map((motor) => (
             <div
               key={motor.id}

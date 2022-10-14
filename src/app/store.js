@@ -8,6 +8,8 @@ import motorslistSlice from '../features/motorcycles/motorslist/motorslistSlice'
 import newmotorSlice from '../features/motorcycles/newmotor/newmotorSlice';
 import deletemotorSlice from '../features/motorcycles/deletemotor/deletemotorSlice';
 import motordetailsSlice from '../features/motorcycles/motordetails/motordetailsSlice';
+import reservationslistSlice from '../features/reservation/myreservations/myreservationSlice';
+import reserveSlice from '../features/reservation/reserve/reserveSlice';
 
 export const store = configureStore({
   reducer: {
@@ -18,6 +20,8 @@ export const store = configureStore({
     newmotor: newmotorSlice,
     deletemotor: deletemotorSlice,
     motordetails: motordetailsSlice,
+    reservations: reservationslistSlice,
+    newreserve: reserveSlice,
   },
 
 });

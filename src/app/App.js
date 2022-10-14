@@ -15,30 +15,28 @@ import UnauthorizedRoute from '../features/unaccessible/UnauthorizedRoute';
 
 const ROLES = { user: 'user', admin: 'admin' };
 
-function App() {
-  return (
-    <div>
-      <Routes>
-        <Route exact path="/" element={<Home />} />
+const App = () => (
+  <>
+    <Routes>
+      <Route exact path="/" element={<Home />} />
 
-        <Route element={<RequireAuth allowedRole={ROLES.user} />}>
-          <Route exact path="/motorcycles" element={<Motorcycles />} />
-          <Route exact path="/motorcycles/:motorId/details" element={<MotorDetails />} />
-          <Route exact path="/my_reservations" element={<MyReservations />} />
-          <Route exact path="/reserve/:motorId" element={<Reserve />} />
-        </Route>
+      <Route element={<RequireAuth allowedRole={ROLES.user} />}>
+        <Route exact path="/motorcycles" element={<Motorcycles />} />
+        <Route exact path="/motorcycles/:motorId/details" element={<MotorDetails />} />
+        <Route exact path="/my_reservations" element={<MyReservations />} />
+        <Route exact path="/reserve/:motorId" element={<Reserve />} />
+      </Route>
 
-        <Route element={<RequireAuth allowedRole={ROLES.admin} />}>
-          <Route exact path="/add_motorcycle" element={<NewMotor />} />
-          <Route exact path="/delete_motorcycle" element={<DeleteMotor />} />
-        </Route>
+      <Route element={<RequireAuth allowedRole={ROLES.admin} />}>
+        <Route exact path="/add_motorcycle" element={<NewMotor />} />
+        <Route exact path="/delete_motorcycle" element={<DeleteMotor />} />
+      </Route>
 
-        <Route path="/unauthorized" element={<UnauthorizedRoute />} />
-        <Route path="*" element={<MissingRoute />} />
-      </Routes>
-      <ToastContainer autoClose={2000} />
-    </div>
-  );
-}
+      <Route path="/unauthorized" element={<UnauthorizedRoute />} />
+      <Route path="*" element={<MissingRoute />} />
+    </Routes>
+    <ToastContainer autoClose={2000} />
+  </>
+);
 
 export default App;
