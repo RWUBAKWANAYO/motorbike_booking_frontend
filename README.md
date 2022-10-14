@@ -9,6 +9,9 @@
 ### Kanban Board
 [Kanban Board](https://github.com/RWUBAKWANAYO/motorbike_booking_frontend/projects/1)
 
+### Intial State of Kanban Board
+[Initial Kanban Board](./src/assets/images/Kanban.PNG)
+
 > ***We are a group of five***
 1. Member 1 - [Pedro](https://github.com/ppmarq1)
 2. Member 2 - [Joseph](https://github.com/Kwentsir)
