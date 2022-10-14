@@ -3,6 +3,8 @@ import {
   NavLink, useLocation, useNavigate, useParams,
 } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Logout from '../../features/authenticate/logout/Logout';
+import UseAuth from '../UseAuth';
 
 const SidebarLinks = () => {
   const location = useLocation();
@@ -27,6 +29,9 @@ const SidebarLinks = () => {
     { id: 4, path: '/add_motorcycle', text: 'ADD MOTOCYCLE' },
     { id: 5, path: '/delete_motorcycle', text: 'DELETE MOTORCYCLE' },
   ];
+
+  const { User } = UseAuth();
+
   return (
     <div className="sidebar-routes-links">
 
@@ -40,6 +45,7 @@ const SidebarLinks = () => {
           {el.text}
         </NavLink>
       ))}
+      {User && <Logout />}
     </div>
   );
 };

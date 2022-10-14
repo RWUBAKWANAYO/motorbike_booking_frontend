@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useParams } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars, faXmark } from '@fortawesome/free-solid-svg-icons';
 import motor1 from '../../../assets/images/motor1.png';
@@ -8,6 +9,8 @@ import './Reserve.css';
 import ReserveForm from './ReserveForm';
 
 const Reserve = () => {
+  const { motorId } = useParams();
+
   const [showSidebar, setShowSidebar] = useState(false);
 
   return (
@@ -49,7 +52,7 @@ const Reserve = () => {
           Neque porro quisquam est qui dolorem ipsum quia dolor sit amet,
           consectetur, adipisci velit
         </p>
-        <ReserveForm />
+        <ReserveForm motorId={motorId} />
       </div>
     </div>
   );
