@@ -13,7 +13,7 @@ const initialState = {
 export const LoginUser = createAsyncThunk('signin', async (userData, { rejectWithValue }) => {
   const id = toast.loading('Please wait...');
   try {
-    const response = await axios.post(`${process.env.REACT_APP_BASE_URL}/login`, { user: userData });
+    const response = await axios.post('https://pacific-cove-79167.herokuapp.com/login', { user: userData });
     SaveCredentials({ authorization: response.headers.authorization, user: response.data.user });
     toast.update(id, {
       render: response.data.message, type: 'success', autoClose: 2000, isLoading: false,

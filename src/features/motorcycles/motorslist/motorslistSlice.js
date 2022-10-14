@@ -1,6 +1,7 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
+import UseAuth from '../../../common/UseAuth';
 
 const initialState = {
   loading: false,
@@ -10,7 +11,8 @@ const initialState = {
 
 export const FetchMotors = createAsyncThunk('motorslist', async (_, { rejectWithValue }) => {
   try {
-    const response = await axios.get('http://127.0.0.1:3000/api/v1/motorbikes');
+    const { config } = UseAuth();
+    const response = await axios.get('https://pacific-cove-79167.herokuapp.com/api/v1/motorbikes', config);
     return response.data;
   } catch (error) {
     return rejectWithValue(error);

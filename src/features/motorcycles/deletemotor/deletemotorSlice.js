@@ -2,6 +2,7 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 import { toast } from 'react-toastify';
+import UseAuth from '../../../common/UseAuth';
 
 const initialState = {
   loading: false,
@@ -12,7 +13,8 @@ const initialState = {
 export const DeleteMotors = createAsyncThunk('deletemotor', async (motorid, { rejectWithValue }) => {
   const id = toast.loading('Deleting....');
   try {
-    const response = await axios.delete(`http://127.0.0.1:3000/api/v1/motorbikes/${motorid}`);
+    const { config } = UseAuth();
+    const response = await axios.delete(`https://pacific-cove-79167.herokuapp.com/api/v1/motorbikes/${motorid}`, config);
     toast.update(id, {
       render: 'Motor Deleted successfully', type: 'success', autoClose: 2000, isLoading: false,
     });
