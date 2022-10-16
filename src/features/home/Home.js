@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
+import Slide from './Slide';
 import { ShowForms } from '../authenticate/authenticateSlice';
 import Authenticate from '../authenticate/Authenticate';
 import UseAuth from '../../common/UseAuth';
@@ -27,6 +28,7 @@ const Home = () => {
   const handleNavigate = () => navigate('/motorcycles');
   return (
     <div className="home-container">
+      <Slide />
       <h1>MOTORBIKE BOOKING</h1>
       <button
         type="button"
