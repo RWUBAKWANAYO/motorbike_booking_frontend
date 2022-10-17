@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 
 export const authenticateSlice = createSlice({
   name: 'authforms',
-  initialState: { visible: true },
+  initialState: { visible: false },
   reducers: {
     HideForms: (state) => { state.visible = false; },
     ShowForms: (state) => { state.visible = true; },

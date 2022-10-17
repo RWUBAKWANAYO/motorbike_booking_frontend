@@ -15,17 +15,18 @@ const Home = () => {
   const dispatch = useDispatch();
   const registerinfo = useSelector((state) => state.signup);
   const logininfo = useSelector((state) => state.signin);
+  const { User } = UseAuth();
 
   useEffect(() => {
-    const { User } = UseAuth();
-    if (registerinfo.user.length || logininfo.user.length || User) {
-      navigate('/motorcycles');
-    } else dispatch(ShowForms());
+    if (registerinfo.user.length || logininfo.user.length || User) navigate('/motorcycles');
   }, [registerinfo, logininfo]);
 
   const authforms = useSelector((state) => state.authforms);
 
-  const handleNavigate = () => navigate('/motorcycles');
+  const handleNavigate = () => {
+    if (User) return navigate('/motorcycles');
+    return dispatch(ShowForms());
+  };
   return (
     <div className="home-container">
       <Slide />

@@ -31,6 +31,9 @@ export const LoginUser = createAsyncThunk('signin', async (userData, { rejectWit
 const signinSlice = createSlice({
   name: 'signin',
   initialState,
+  reducers: {
+    SigninReset: () => initialState,
+  },
   extraReducers: (builder) => {
     builder.addCase(LoginUser.pending, (state) => {
       state.loading = true; state.user = []; state.errors = false;
@@ -44,4 +47,5 @@ const signinSlice = createSlice({
   },
 });
 
+export const { SigninReset } = signinSlice.actions;
 export default signinSlice.reducer;

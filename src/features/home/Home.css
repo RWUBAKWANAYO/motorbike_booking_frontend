@@ -21,6 +21,7 @@
   margin-bottom: 4rem;
   position: relative;
   z-index: 2;
+  text-align: center;
 }
 
 .home-container .explore {
