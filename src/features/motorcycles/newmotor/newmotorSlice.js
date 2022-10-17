@@ -11,7 +11,7 @@ const initialState = {
 };
 
 export const CreateMotors = createAsyncThunk('newmotor', async (newmotor, { rejectWithValue }) => {
-  const id = toast.loading('Loading....');
+  const id = toast.loading('Almost there....');
   try {
     const { config } = UseAuth();
     const response = await axios.post('https://pacific-cove-79167.herokuapp.com/api/v1/motorbikes', newmotor, config);

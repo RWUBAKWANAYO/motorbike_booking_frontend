@@ -25,7 +25,7 @@ const NewMotor = () => {
 
   const handleCreate = (e) => {
     e.preventDefault();
-    toast.loading('Upload image...');
+    toast.loading('Please wait...');
     const formData = new FormData();
     formData.append('file', motorData.image.photo);
     formData.append('upload_preset', 'finalcapstone');
