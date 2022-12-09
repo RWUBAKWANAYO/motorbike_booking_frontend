@@ -14,7 +14,7 @@ export const FetchMotorDetails = createAsyncThunk('motordetails', async (motorid
   const id = toast.loading('Loading data....');
   try {
     const { config } = UseAuth();
-    const response = await axios.get(`https://pacific-cove-79167.herokuapp.com/api/v1/motorbikes/${motorid}`, config);
+    const response = await axios.get(`https://motorbikebookingbackend-production.up.railway.app/api/v1/motorbikes/${motorid}`, config);
     toast.update(id, {
       render: 'Motor Displayed successfully', type: 'success', autoClose: 2000, isLoading: false,
     });

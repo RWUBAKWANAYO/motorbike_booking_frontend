@@ -12,7 +12,7 @@ const initialState = {
 export const FetchReservations = createAsyncThunk('reservations', async (_, { rejectWithValue }) => {
   try {
     const { config } = UseAuth();
-    const response = await axios.get('https://pacific-cove-79167.herokuapp.com/api/v1/reservations', config);
+    const response = await axios.get('https://motorbikebookingbackend-production.up.railway.app/api/v1/reservations', config);
     return response.data;
   } catch (error) {
     return rejectWithValue(error);
