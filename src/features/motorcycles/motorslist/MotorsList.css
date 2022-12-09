@@ -1,0 +1,95 @@
+:root {
+  --black-color: #212529;
+}
+
+.motorslist-cont {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+}
+
+.motorslist-wrapper {
+  width: calc(100% - 220px);
+  height: fit-content(100%);
+  margin-left: 220px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.motor-cards-list {
+  padding: 0 7.5%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 7.5%;
+  row-gap: 2rem;
+}
+
+.motocycles-close {
+  height: 4rem;
+  width: 100%;
+}
+
+.motorslist-header {
+  margin: 2rem 7.5% 1rem 7.5%;
+  padding: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+}
+
+.motorslist-header h1 {
+  font-size: calc(1vw + 16px);
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.brands-filter {
+  width: 35px;
+  height: 35px;
+  border: 1px var(--black-color) solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  font-size: 18px;
+  cursor: pointer;
+  color: var(--black-color);
+}
+
+.motor-card {
+  width: 100%;
+  cursor: pointer;
+  border-radius: 5px;
+  border: 1px transparent solid;
+}
+
+.motor-card:hover {
+  border: 1px rgba(0, 0, 0, 0.2) solid;
+}
+
+@media only screen and (max-width: 768px) {
+  .motorslist-wrapper {
+    width: 100%;
+    height: 100%;
+    margin-left: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .motor-cards-list {
+    padding: 0 7.5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 7.5%;
+    row-gap: 2rem;
+  }
+
+  .motorslist-cont {
+    flex-direction: column;
+  }
+}
