@@ -11,8 +11,8 @@ const initialState = {
 
 export const FetchReservations = createAsyncThunk('reservations', async (_, { rejectWithValue }) => {
   try {
-    const { config } = UseAuth();
-    const response = await axios.get('http://localhost:3000/api/v1/reservations', config);
+    const { config, User } = UseAuth();
+    const response = await axios.get(`http://localhost:3000/api/v1/reservations/${User.id}`, config);
     return response.data;
   } catch (error) {
     return rejectWithValue(error);
