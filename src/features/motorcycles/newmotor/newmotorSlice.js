@@ -14,7 +14,7 @@ export const CreateMotors = createAsyncThunk('newmotor', async (newmotor, { reje
   const id = toast.loading('Almost there....');
   try {
     const { config } = UseAuth();
-    const response = await axios.post('http://localhost:3000/api/v1/motorbikes', newmotor, config);
+    const response = await axios.post('https://pacific-cove-79167.herokuapp.com/api/v1/motorbikes', newmotor, config);
     toast.update(id, {
       render: 'Motor Created successfully',
       type: 'success',

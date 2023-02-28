@@ -9,7 +9,8 @@ const MotorCard = ({ motor }) => (
     <small className="motor-card-name">{motor.motor_name}</small>
     <small className="motor-card-break">..................</small>
     <p className="motor-desc">
-      An electric motor is a new electrical machine designed world
+      { motor.description.slice(0, 40)}
+      ...
     </p>
     <MotorCardMedia />
   </div>
@@ -19,12 +20,14 @@ MotorCard.propTypes = {
   motor: PropTypes.shape({
     image: PropTypes.string.isRequired,
     motor_name: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired,
   }),
 };
 MotorCard.defaultProps = {
   motor: {
     image: 'image',
     motor_name: 'name',
+    description: 'description',
   },
 };
 export default MotorCard;

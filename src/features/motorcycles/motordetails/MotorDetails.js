@@ -25,10 +25,7 @@ const MotorDetails = () => {
         <div className="motordetails-image"><img src={motordetails.image} alt="motor" /></div>
         <div className="motordetails-desc">
           <h1>{motordetails.motor_name}</h1>
-          <h4>
-            This motorcycle is very interesting and has a lot of features that riders love.
-
-          </h4>
+          <h4>{motordetails.description}</h4>
           <div className="motor-info-list">
             <span>
               <small>Brand</small>

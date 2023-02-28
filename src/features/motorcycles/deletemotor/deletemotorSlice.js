@@ -14,7 +14,7 @@ export const DeleteMotors = createAsyncThunk('deletemotor', async (motorid, { re
   const id = toast.loading('Deleting....');
   try {
     const { config } = UseAuth();
-    const response = await axios.delete(`http://localhost:3000/api/v1/motorbikes/${motorid}`, config);
+    const response = await axios.delete(`https://pacific-cove-79167.herokuapp.com/api/v1/motorbikes/${motorid}`, config);
     toast.update(id, {
       render: 'Motor Deleted successfully',
       type: 'success',

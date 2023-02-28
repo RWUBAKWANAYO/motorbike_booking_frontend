@@ -13,7 +13,7 @@ const initialState = {
 export const RegisterUser = createAsyncThunk('signup', async (userData, { rejectWithValue }) => {
   const id = toast.loading('Please wait...');
   try {
-    const response = await axios.post('http://localhost:3000/signup', { user: userData });
+    const response = await axios.post('https://pacific-cove-79167.herokuapp.com/signup', { user: userData });
     SaveCredentials({ authorization: response.headers.authorization, user: response.data.user });
     toast.update(id, {
       render: response.data.message,

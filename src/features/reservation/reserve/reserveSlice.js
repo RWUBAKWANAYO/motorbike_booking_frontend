@@ -14,7 +14,7 @@ export const CreateReservation = createAsyncThunk('newreserve', async (newreserv
   const id = toast.loading('Loading....');
   try {
     const { config } = UseAuth();
-    const response = await axios.post('http://localhost:3000/api/v1/reservations',
+    const response = await axios.post('https://pacific-cove-79167.herokuapp.com/api/v1/reservations',
       newreserve, config);
     toast.update(id, {
       render: 'Motor Reserved successfully',

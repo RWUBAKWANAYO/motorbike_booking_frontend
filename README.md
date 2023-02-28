@@ -2,6 +2,8 @@
 
 > Motorbike Booking is a react frontend application for booking Motorbikes. This application serves as user interface for the backend and users can create, and delete Motorbikes, as well as add reservations. Users can sign up or sign in to able to book motor.
 
+![Group 1](https://user-images.githubusercontent.com/68381641/221922254-143c23ae-f0ce-46f3-b373-c6dd5965b77d.png)
+
 ### Back-End Repository
 
 [Motorbike Booking Back-end](https://github.com/RWUBAKWANAYO/motorbike_booking_backend)
@@ -55,7 +57,7 @@ npm install
 npm start
 ```
 
-Visit http://localhost:3000/ in your browser.
+Visit https://pacific-cove-79167.herokuapp.com/ in your browser.
 
 ## Visit And Open Files
 

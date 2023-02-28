@@ -8,8 +8,8 @@ export default ReservedMotor;
 
 ReservedMotor.propTypes = {
   motorId: PropTypes.number.isRequired,
-  motorslist: PropTypes.arrayOf(PropTypes.object({
+  motorslist: PropTypes.arrayOf(PropTypes.object = {
     id: PropTypes.number,
     image: PropTypes.string,
-  })).isRequired,
+  }).isRequired,
 };
