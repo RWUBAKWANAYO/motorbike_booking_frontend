@@ -11,6 +11,7 @@ import { toast } from 'react-toastify';
 import Sidebar from '../../../common/sidebar/Sidebar';
 import SidebarPop from '../../../common/sidebar/SidebarPop';
 import { CreateMotors } from './newmotorSlice';
+import CategorySelect from './CategorySelect';
 
 const NewMotor = () => {
   const dispatch = useDispatch();
@@ -18,19 +19,22 @@ const NewMotor = () => {
   const [motorData, setMotorData] = useState({
     motor_name: '',
     year: '',
-    category_id: 2,
+    category_id: '',
     price: '',
     image: { text: 'Upload motorcylce Image', photo: '' },
   });
 
+  const handleCategory = (ID) => setMotorData({ ...motorData, category_id: ID });
+
   const handleCreate = (e) => {
     e.preventDefault();
+    if (motorData.category_id === '') return toast.error('Please select a category');
     toast.loading('Please wait...');
     const formData = new FormData();
     formData.append('file', motorData.image.photo);
     formData.append('upload_preset', 'finalcapstone');
     formData.append('cloud_name', 'nayo');
-    axios.post('https://api.cloudinary.com/v1_1/nayo/image/upload', formData)
+    return axios.post('https://api.cloudinary.com/v1_1/nayo/image/upload', formData)
       .then((res) => {
         toast.dismiss();
         const data = { ...motorData, image: res.data.url };
@@ -47,6 +51,10 @@ const NewMotor = () => {
         <form className="add-motor-form" onSubmit={(e) => handleCreate(e)}>
           <h1 className="add-motor-header">ADD MOTORCYLE</h1>
 
+          <div className="add-motor-input-cont">
+            <FontAwesomeIcon icon={faGrip} className="add-motor-icon" />
+            <CategorySelect handleCategory={handleCategory} />
+          </div>
           <div className="add-motor-input-cont">
             <FontAwesomeIcon icon={faGrip} className="add-motor-icon" />
             <input
