@@ -21,6 +21,7 @@ const NewMotor = () => {
     year: '',
     category_id: '',
     price: '',
+    description: '',
     image: { text: 'Upload motorcylce Image', photo: '' },
   });
 
@@ -108,6 +109,14 @@ const NewMotor = () => {
             />
           </div>
 
+          <div className="add-motor-input-cont">
+            <FontAwesomeIcon icon={faCalendarWeek} className="add-motor-icon" />
+            <textarea
+              placeholder="Motorcycle Description"
+              required
+              onChange={(e) => setMotorData({ ...motorData, description: e.target.value })}
+            />
+          </div>
           <div className="submit-cont">
             <input type="submit" value="CREATE MOTORCYLE" />
           </div>
