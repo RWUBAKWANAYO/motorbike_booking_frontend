@@ -1,0 +1,101 @@
+:root {
+  --green-color: #88c801;
+  --light-black: #000000bd;
+}
+
+.list-all-cont {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+}
+
+.list-all-wrapper {
+  width: calc(100% - 220px);
+  height: auto;
+  margin: 3rem 0 0 220px;
+  padding-bottom: 3rem;
+}
+
+.list-all-wrapper div {
+  height: 3rem;
+}
+
+.list-all-header {
+  text-align: center;
+  font-size: calc(1vw + 16px);
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.list-all-table {
+  font-family: Arial, Helvetica, sans-serif;
+  width: calc(85%);
+  margin: 2rem  auto;
+  border: 1px hsla(210, 11%, 15%, 0.1) solid;
+  box-shadow: 0 0 1px rgba(33, 37, 41, 0.5);
+}
+
+.list-all-table td {
+  font-size: 14px;
+  font-weight: 600;
+  color: #22262ac0;
+  padding: 10px;
+  text-align: center;
+}
+
+.list-all-table td img {
+  width: 40px;
+  border-radius: 5px;
+}
+
+.list-all-table tr:nth-child(even) { background-color: #22262a1a; }
+
+.list-all-table th {
+  background-color: rgba(34, 38, 42, 0.5);
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 20px 10px;
+  text-align: center;
+}
+
+.list-all-table td button {
+  width: 100px;
+  height: 30px;
+  outline: none;
+  border: 1px #22262a28 solid;
+  background-color: #fff;
+  color: #22262ac0;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 5px;
+}
+
+.list-all-table td button:hover {
+  background-color: #a50000;
+  color: #fff;
+}
+
+@media only screen and (max-width: 768px) {
+  .list-all-cont {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .list-all-wrapper {
+    width: 100%;
+    height: auto;
+    margin: 3rem 12px 0 0;
+    padding-bottom: 3rem;
+  }
+
+  .list-all-table th {
+    background-color: rgba(34, 38, 42, 0.5);
+    color: white;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 3px 2px;
+    text-align: center;
+  }
+}

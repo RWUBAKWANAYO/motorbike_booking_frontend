@@ -1,0 +1,157 @@
+.add-motor-cont {
+  width: 100%;
+  height: 100vh;
+  position: relative;
+  display: flex;
+}
+
+.add-motor-wrapper {
+  width: calc(100% - 220px);
+  height: fit-content(100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 4rem 0 0 220px;
+}
+
+.add-motor-header {
+  margin-bottom: 1rem;
+  padding: 1rem 0;
+  font-size: calc(1vw + 16px);
+  font-weight: 800;
+  letter-spacing: 1.2px;
+}
+
+.add-motor-form {
+  width: 450px;
+  background-color: #f1f1f1;
+  padding: 2rem 30px 4rem 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.add-motor-input-cont {
+  width: 100%;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  margin-top: 15px;
+  position: relative;
+  color: #000;
+}
+
+.add-motor-input-cont .add-motor-icon {
+  width: 45px;
+  font-size: 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.upload-image-input {
+  opacity: 0;
+  position: relative;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.add-motor-select-cont {
+  width: calc(100% - 55px);
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.add-motor-textarea-cont {
+  width: 100%;
+  height: 150px;
+  background-color: #fff;
+  border: none;
+  outline: none;
+  resize: none;
+  color: rgba(0, 0, 0, 0.3);
+  margin-top: 15px;
+  padding: 10px 15px;
+}
+
+.upload-cont {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  column-gap: 10px;
+  z-index: 1;
+  font-size: 15px;
+  font-weight: 500;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+#file-uploaded {
+  color: #000;
+}
+
+.add-motor-input-cont input {
+  outline: none;
+  border: none;
+  background-color: transparent;
+  width: calc(100% - 45px);
+  height: 100%;
+  padding: 10px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.add-motor-input-cont input::placeholder,
+.add-motor-textarea-cont::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.submit-cont {
+  width: 100%;
+  margin-top: 30px;
+}
+
+.submit-cont input {
+  width: 100%;
+  height: 45px;
+  background-color: var(--green-color);
+  outline: none;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 768px) {
+  .add-motor-cont {
+    flex-direction: column;
+    overflow-x: hidden;
+  }
+
+  .add-motor-wrapper {
+    width: calc(100%);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 4rem 0 0 6px;
+  }
+
+  .add-motor-form {
+    width: 90%;
+    background-color: #f1f1f1;
+    padding: 2rem 16px 3rem 13px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
