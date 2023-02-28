@@ -14,15 +14,21 @@ export const CreateReservation = createAsyncThunk('newreserve', async (newreserv
   const id = toast.loading('Loading....');
   try {
     const { config } = UseAuth();
-    const response = await axios.post('https://motorbikebookingbackend-production.up.railway.app/api/v1/reservations',
+    const response = await axios.post('http://localhost:3000/api/v1/reservations',
       newreserve, config);
     toast.update(id, {
-      render: 'Motor Reserved successfully', type: 'success', autoClose: 2000, isLoading: false,
+      render: 'Motor Reserved successfully',
+      type: 'success',
+      autoClose: 2000,
+      isLoading: false,
     });
     return response.data;
   } catch (error) {
     toast.update(id, {
-      render: 'Reserve Motor Failed', type: 'error', autoClose: 2000, isLoading: false,
+      render: 'Reserve Motor Failed',
+      type: 'error',
+      autoClose: 2000,
+      isLoading: false,
     });
     return rejectWithValue(error);
   }
@@ -33,13 +39,19 @@ const newreserveSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder.addCase(CreateReservation.pending, (state) => {
-      state.loading = true; state.reserve = []; state.errors = [];
+      state.loading = true;
+      state.reserve = [];
+      state.errors = [];
     });
     builder.addCase(CreateReservation.fulfilled, (state, action) => {
-      state.loading = false; state.reserve = action.payload; state.errors = [];
+      state.loading = false;
+      state.reserve = action.payload;
+      state.errors = [];
     });
     builder.addCase(CreateReservation.rejected, (state, action) => {
-      state.loading = false; state.reserve = []; state.errors = action.error;
+      state.loading = false;
+      state.reserve = [];
+      state.errors = action.error;
     });
   },
 });

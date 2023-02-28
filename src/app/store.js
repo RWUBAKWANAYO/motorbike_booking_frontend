@@ -10,12 +10,14 @@ import deletemotorSlice from '../features/motorcycles/deletemotor/deletemotorSli
 import motordetailsSlice from '../features/motorcycles/motordetails/motordetailsSlice';
 import reservationslistSlice from '../features/reservation/myreservations/myreservationSlice';
 import reserveSlice from '../features/reservation/reserve/reserveSlice';
+import categoriesSlice from '../features/categories/categoriesSlice';
 
 export const store = configureStore({
   reducer: {
     authforms: authenticateSlice,
     signup: signupSlice,
     signin: signinSlice,
+    categories: categoriesSlice,
     motorslist: motorslistSlice,
     newmotor: newmotorSlice,
     deletemotor: deletemotorSlice,

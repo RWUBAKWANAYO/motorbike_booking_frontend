@@ -13,16 +13,22 @@ const initialState = {
 export const RegisterUser = createAsyncThunk('signup', async (userData, { rejectWithValue }) => {
   const id = toast.loading('Please wait...');
   try {
-    const response = await axios.post('https://motorbikebookingbackend-production.up.railway.app/signup', { user: userData });
+    const response = await axios.post('http://localhost:3000/signup', { user: userData });
     SaveCredentials({ authorization: response.headers.authorization, user: response.data.user });
     toast.update(id, {
-      render: response.data.message, type: 'success', autoClose: 2000, isLoading: false,
+      render: response.data.message,
+      type: 'success',
+      autoClose: 2000,
+      isLoading: false,
     });
     return response.data;
   } catch (error) {
     const err = error.response.data.errors || ['something went wrong'];
     toast.update(id, {
-      render: err[0], type: 'error', autoClose: 2000, isLoading: false,
+      render: err[0],
+      type: 'error',
+      autoClose: 2000,
+      isLoading: false,
     });
     return rejectWithValue(err);
   }
@@ -36,13 +42,19 @@ const signupSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(RegisterUser.pending, (state) => {
-      state.loading = true; state.user = []; state.errors = false;
+      state.loading = true;
+      state.user = [];
+      state.errors = false;
     });
     builder.addCase(RegisterUser.fulfilled, (state, action) => {
-      state.loading = false; state.user = [action.payload.user]; state.errors = [];
+      state.loading = false;
+      state.user = [action.payload.user];
+      state.errors = [];
     });
     builder.addCase(RegisterUser.rejected, (state, action) => {
-      state.loading = false; state.user = []; state.errors = action.payload;
+      state.loading = false;
+      state.user = [];
+      state.errors = action.payload;
     });
   },
 });

@@ -12,7 +12,7 @@ const initialState = {
 export const FetchMotors = createAsyncThunk('motorslist', async (_, { rejectWithValue }) => {
   try {
     const { config } = UseAuth();
-    const response = await axios.get('https://motorbikebookingbackend-production.up.railway.app/api/v1/motorbikes', config);
+    const response = await axios.get('http://localhost:3000/api/v1/motorbikes', config);
     return response.data;
   } catch (error) {
     return rejectWithValue(error);
@@ -24,13 +24,19 @@ const motorslistSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder.addCase(FetchMotors.pending, (state) => {
-      state.loading = true; state.motors = []; state.errors = [];
+      state.loading = true;
+      state.motors = [];
+      state.errors = [];
     });
     builder.addCase(FetchMotors.fulfilled, (state, action) => {
-      state.loading = false; state.motors = action.payload; state.errors = [];
+      state.loading = false;
+      state.motors = action.payload;
+      state.errors = [];
     });
     builder.addCase(FetchMotors.rejected, (state, action) => {
-      state.loading = false; state.motors = []; state.errors = action.error;
+      state.loading = false;
+      state.motors = [];
+      state.errors = action.error;
     });
   },
 });

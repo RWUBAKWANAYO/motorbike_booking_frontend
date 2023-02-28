@@ -12,7 +12,7 @@ const initialState = {
 export const FetchReservations = createAsyncThunk('reservations', async (_, { rejectWithValue }) => {
   try {
     const { config } = UseAuth();
-    const response = await axios.get('https://motorbikebookingbackend-production.up.railway.app/api/v1/reservations', config);
+    const response = await axios.get('http://localhost:3000/api/v1/reservations', config);
     return response.data;
   } catch (error) {
     return rejectWithValue(error);
@@ -24,13 +24,19 @@ const reservationslistSlice = createSlice({
   initialState,
   extraReducers: (builder) => {
     builder.addCase(FetchReservations.pending, (state) => {
-      state.loading = true; state.reserved = []; state.errors = [];
+      state.loading = true;
+      state.reserved = [];
+      state.errors = [];
     });
     builder.addCase(FetchReservations.fulfilled, (state, action) => {
-      state.loading = false; state.reserved = action.payload.reservation; state.errors = [];
+      state.loading = false;
+      state.reserved = action.payload.reservation;
+      state.errors = [];
     });
     builder.addCase(FetchReservations.rejected, (state, action) => {
-      state.loading = false; state.reserved = []; state.errors = action.error;
+      state.loading = false;
+      state.reserved = [];
+      state.errors = action.error;
     });
   },
 });
