@@ -108,15 +108,12 @@ const NewMotor = () => {
               }}
             />
           </div>
-
-          <div className="add-motor-input-cont">
-            <FontAwesomeIcon icon={faCalendarWeek} className="add-motor-icon" />
-            <textarea
-              placeholder="Motorcycle Description"
-              required
-              onChange={(e) => setMotorData({ ...motorData, description: e.target.value })}
-            />
-          </div>
+          <textarea
+            className="add-motor-textarea-cont"
+            placeholder="Motorcycle Description"
+            required
+            onChange={(e) => setMotorData({ ...motorData, description: e.target.value })}
+          />
           <div className="submit-cont">
             <input type="submit" value="CREATE MOTORCYLE" />
           </div>

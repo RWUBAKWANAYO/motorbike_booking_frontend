@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+import PropTypes from 'prop-types';
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { FetchCategories } from '../../categories/categoriesSlice';
@@ -9,7 +11,7 @@ const CategorySelect = ({ handleCategory }) => {
     dispatch(FetchCategories());
   }, []);
   return (
-    <select onChange={(e) => handleCategory(e.target.value)}>
+    <select onChange={(e) => handleCategory(e.target.value)} className="add-motor-select-cont">
       <option selected disabled>Select Category</option>
       {categories.categories.map((category) => (
         <option key={category.id} value={category.id}>
@@ -21,3 +23,7 @@ const CategorySelect = ({ handleCategory }) => {
 };
 
 export default CategorySelect;
+
+CategorySelect.propTypes = {
+  handleCategory: PropTypes.func.isRequired,
+};
